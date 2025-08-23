@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Visit Checklist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c; /* Deep charcoal background */
+        }
+        .container {
+            max-width: 900px;
+        }
+        .checklist-item {
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            position: relative;
+            padding-left: 2.5rem; /* Space for the checkbox */
+        }
+        .custom-checkbox {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            width: 1.5rem;
+            height: 1.5rem;
+            border: 2px solid #a0aec0; /* Lighter gray border */
+            border-radius: 50%; /* Circle shape */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease-in-out;
+        }
+        .checklist-item.completed .custom-checkbox {
+            background-color: #48bb78; /* Green checkmark background */
+            border-color: #48bb78;
+        }
+        .custom-checkbox::after {
+            content: '';
+            width: 0.75rem;
+            height: 0.75rem;
+            transform: scale(0);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: all 0.2s ease-in-out;
+        }
+        .checklist-item.completed .custom-checkbox::after {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .checklist-item.completed .text-content {
+            color: #718096; /* Gray text for completed items */
+            text-decoration: line-through;
+        }
+        .checklist-item:hover .text-content {
+            color: #ffffff; /* White text on hover */
+        }
+    </style>
+</head>
+<body class="p-8">
+
+    <div class="container mx-auto bg-gray-800 text-gray-200 p-8 rounded-2xl shadow-lg">
+
+        <h1 class="text-3xl font-bold mb-6 text-gray-100">Site Visit Checklist</h1>
+
+        <!-- Priority Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-red-500">🔴 Priority — Confirm First (ask on arrival)</h2>
+            <div class="space-y-3">
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Get permissions: what we can/can’t film, measure, or open.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Files today? Latest CAD (plan/elevation/sections with dimensions).</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Manufacturer 3D? STEP/IGES/SolidWorks/Max/Maya/Blender/FBX.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Device 3-views? Front/side/top drawings or tech sheets with sizes.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">BOM (names, models, quantities, locations) & any manuals with dimensions.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Signage assets (AI/PNG/SVG for labels/warnings/UI panels).</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capture the space Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-300">Capture the space</h2>
+            <div class="space-y-3">
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">One continuous walkthrough video with quick voice notes (area names, floor/level).</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Room stills: from each corner and toward each corner.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Include ceiling, columns, ducts, rails, cable trays, exits, safety points.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Capture each key device Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-300">Capture each key device</h2>
+            <div class="space-y-3">
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Three views: front, side, top/oblique.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Open/closed: doors, lids, guards, rails.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Close-ups: labels, warnings, UI panels (flat, sharp, no glare).</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Flat texture shots for big planes (walls/floor/guards); include A4 sheet or ruler in one shot for scale.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Measure Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-300">Measure (only if CAD is missing/doubtful)</h2>
+            <div class="space-y-3">
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Room L×W, clear height (beam/ceiling), corridor width, door clear W/H.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Device footprint + height and working envelope (swing/slide).</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Relative distances: device↔wall/column; rail/pipe heights.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Before you leave Section -->
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-4 text-gray-300">Before you leave</h2>
+            <div class="space-y-3">
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">3-minute recap with client: what we got, what’s missing, who sends what, when.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Check photo/video focus & coverage.</span>
+                </div>
+                <div class="checklist-item">
+                    <div class="custom-checkbox"></div>
+                    <span class="text-content">Back up twice (drive + cloud). Use clear names: TYT_CII_Item_001.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Get all checklist items
+        const checklistItems = document.querySelectorAll('.checklist-item');
+
+        // Add click event listener to each item
+        checklistItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('completed');
+            });
+        });
+    </script>
+
+</body>
+</html>
