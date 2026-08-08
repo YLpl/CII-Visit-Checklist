@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Copresence in the CAVE</title>
+  <style>
+    :root{--bg:#f5f6f8;--card:#ffffff;--text:#17191c;--muted:#656b73;--line:#e2e5e9;--accent:#1f5f99;--accent2:#153e66}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:var(--bg);font-family:Arial,Helvetica,sans-serif;color:var(--text)}
+    .card{width:min(720px,100%);background:var(--card);border:1px solid var(--line);border-radius:18px;padding:38px;box-shadow:0 14px 40px rgba(0,0,0,.08)}
+    .eyebrow{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+    h1{font-size:clamp(26px,5vw,40px);line-height:1.14;margin:0 0 14px;font-weight:700}
+    .authors{font-size:16px;color:var(--muted);margin:0 0 8px}
+    .doi{font-size:14px;color:var(--muted);margin:0 0 30px;word-break:break-word}
+    .links{display:grid;gap:14px}
+    a.button{display:block;text-decoration:none;border-radius:12px;padding:17px 18px;font-weight:700;font-size:16px;transition:.15s ease;text-align:center}
+    a.primary{background:var(--accent);color:#fff}
+    a.primary:hover{background:var(--accent2)}
+    a.secondary{border:1px solid var(--line);color:var(--text);background:#fff}
+    a.secondary:hover{background:#f7f8fa}
+    .hint{margin-top:22px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;line-height:1.55;color:var(--muted)}
+    @media(max-width:520px){.card{padding:28px 22px;border-radius:14px}h1{font-size:29px}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="eyebrow">FDG 2026 • Research Paper</div>
+    <h1>Copresence in the CAVE: A Bibliometric Gap Analysis of Immersive Display Research and VR/XR Gameplay</h1>
+    <p class="authors">Yue Liu et al.</p>
+    <p class="doi">DOI: 10.1145/3815598.3815697</p>
+
+    <div class="links">
+      <a class="button primary" href="https://dl.acm.org/doi/10.1145/3815598.3815697" target="_blank" rel="noopener noreferrer">Official Publication — ACM Digital Library</a>
+      <a class="button secondary" href="https://rpi.box.com/s/rli09akt63zaj81l2248tbyicrbhltpe" target="_blank" rel="noopener noreferrer">Read Full Paper — PDF</a>
+    </div>
+
+    <div class="hint">The ACM link provides the official publication record, abstract, citation information, and DOI. The PDF link provides access to the full paper.</div>
+  </main>
+</body>
+</html>
